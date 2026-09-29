@@ -78,7 +78,7 @@ def main():
     g = Graficos(pantalla)
     try:
         entrenar(args, g)
-    except Salir:
+    except (Salir, KeyboardInterrupt):
         pass
     pygame.quit()
 

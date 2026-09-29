@@ -12,6 +12,7 @@ VERDE = (40, 200, 40)
 ROJO = (220, 40, 40)
 ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Assets')
 ALPHA_POBLACION = 70   # transparencia de los dinos que no están destacados
+FUENTES = 'consolas,dejavusansmono,liberationmono,ubuntumono,monospace'  # la primera que exista
 
 
 def cargar(nombre):
@@ -41,9 +42,9 @@ class Graficos:
         self.agachado_t = [transparente(i) for i in self.agachado]
         self.saltar_t = transparente(self.saltar)
 
-        self.fuente_chica = pygame.font.SysFont('consolas', 13)
-        self.fuente = pygame.font.SysFont('consolas', 16)
-        self.fuente_grande = pygame.font.SysFont('consolas', 36)
+        self.fuente_chica = pygame.font.SysFont(FUENTES, 13)
+        self.fuente = pygame.font.SysFont(FUENTES, 16)
+        self.fuente_grande = pygame.font.SysFont(FUENTES, 36)
 
     def texto(self, txt, x, y, fuente=None, centro=False, derecha=False):
         sup = (fuente or self.fuente).render(txt, True, NEGRO)
